@@ -2,7 +2,7 @@
 Project settings
 """
 
-from os import environ, path
+from os import environ
 
 
 LOCAL_IP = "192.168.0.3"
