@@ -13,7 +13,7 @@ class Subscription:
 
     email: str = ""
     name: str = ""
-    time: str = "1d"
+    time: str = "0d"
 
 
 empty_email = Subscription(

@@ -38,6 +38,9 @@ disable=
     bad-continuation,
     import-error,
     no-member,
+    too-few-public-methods,
+    too-many-instance-attributes,
+    unnecessary-pass,
     unused-argument
 
 

@@ -16,7 +16,7 @@ def escape():
 
 
 @pytest.fixture(scope='session')
-def enter(request):
+def enter(request, clean):
     """
     Open browser
     """

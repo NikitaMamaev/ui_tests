@@ -7,6 +7,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from src.elements.button import Button
 from src.elements.field import Field
+from src.elements.link import Link
+from src.elements.subscriptions_table import SubscriptionsTable
 from src.misc.expected_conditions import page_state_is
 from src.misc.driver import Driver
 from src.misc.query import css_selector
@@ -23,9 +25,13 @@ class SubscriptionsPage:
         self.driver = Driver()
         self.url = f"{settings.URL}{settings.UI_HANDLER}"
 
-        self.submit_button = Button(css_selector('button[data-test="new-subs-submit"]'))
+        self.clear_button = Button(css_selector('button[data-test="clear-button"]'))
         self.email_field = Field(css_selector('input[data-test="new-subs-email"]'))
+        self.github_link = Link(css_selector('a.nav-link'))
         self.name_field = Field(css_selector('input[data-test="new-subs-name"]'))
+        self.submit_button = Button(css_selector('button[data-test="new-subs-submit"]'))
+        self.sync_button = Button(css_selector('button[data-test="sync-button"]'))
+        self.table = SubscriptionsTable()
         self.time_field = Field(css_selector('input[data-test="new-subs-time"]'))
 
     def __enter__(self):

@@ -8,7 +8,7 @@ import settings
 from src.misc.browser import Browser
 
 
-class Driver: #pylint: disable=too-few-public-methods
+class Driver:
     """
     Selenium driver as singletone
     """

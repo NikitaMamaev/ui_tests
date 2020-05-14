@@ -2,8 +2,6 @@
 Page enter test
 """
 
-from time import sleep
-
 import hamcrest as hc
 
 from src.pages.subscriptions import SubscriptionsPage
@@ -18,9 +16,20 @@ def test_enter(enter):
     with SubscriptionsPage() as page:
         page.input_data(positive)
         page.submit_button.click()
+        page.table.wait_subscription(positive)
 
-        sleep(5)
         hc.assert_that(
-            page.driver.current_url,
-            hc.equal_to(page.url)
+            actual=page.table.data,
+            matcher=hc.not_(hc.empty()),
+            reason="Subscriptions table is empty!"
+        )
+
+        hc.assert_that(
+            actual=page.table.data,
+            matcher=hc.has_items(hc.has_entries({
+                'email': positive.email,
+                'name': positive.name,
+                'active': False
+            })),
+            reason="There is no new subscription in the table!"
         )

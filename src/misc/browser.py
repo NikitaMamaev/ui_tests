@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-class Browser: #pylint: disable=too-few-public-methods
+class Browser:
     """
     options: selenium class of browser options link
     options_arguments: list of browser options

@@ -19,7 +19,9 @@ class Button(Element):
         """
 
         self.wait_is_clickable()
-        super().click()
+        button = self.find()
+        if button:
+            button.click()
 
         return self
 

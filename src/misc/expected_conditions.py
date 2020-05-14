@@ -8,8 +8,8 @@ def element_is_appeared(element):
     Check element is in browser
     """
 
-    def check(self):
-        return bool(element.find_all())
+    def check(parent):
+        return bool(element.find_all(parent=parent))
 
     return check
 
@@ -18,10 +18,10 @@ def element_is_clickable(element):
     """
     Check that the element is clickable
     """
-    def check(self):
+    def check(parent):
 
-        if element.find_all():
-            return element.find().is_enabled()
+        if element.find_all(parent=parent):
+            return element.find(parent=parent).is_enabled()
 
         return False
 
@@ -33,8 +33,8 @@ def element_is_disappeared(element):
     Check element is not in browser
     """
 
-    def check(self):
-        return not bool(element.find_all())
+    def check(parent):
+        return not bool(element.find_all(parent=parent))
 
     return check
 
