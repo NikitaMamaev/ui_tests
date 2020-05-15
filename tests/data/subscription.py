@@ -35,21 +35,21 @@ empty_time = Subscription(
 expiring_time = Subscription(
     email="expiring_time@example.com",
     name="Expiring Time",
-    time="10s"
+    time="8h5s"
 )
 
-negative_email = Subscription(
+incorrect_email = Subscription(
     email="incorrect_email",
     name="Incorrect Email"
 )
 
-negative_name = Subscription(
+incorrect_name = Subscription(
     email="incorrect_name@example.com",
     name="./*#@!%|^&*(),'`~;:+-}_=[]?\"<>{",
     time="incorrect name"
 )
 
-negative_time = Subscription(
+incorrect_time = Subscription(
     email="incorrect_time@example.com",
     name="Incorrect Time",
     time="incorrect time"
@@ -58,6 +58,12 @@ negative_time = Subscription(
 positive = Subscription(
     email="positive@example.com",
     name="Positive Name"
+)
+
+small_time = Subscription(
+    email="small_time@example.com",
+    name="Small Time",
+    time="2h"
 )
 
 xss_name = Subscription(

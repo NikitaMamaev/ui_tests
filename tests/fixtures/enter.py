@@ -1,4 +1,6 @@
-
+"""
+Open browser before testing and close after
+"""
 
 import pytest
 
@@ -15,7 +17,7 @@ def escape():
 
 
 @pytest.fixture(scope='session')
-def enter(request, clean):
+def enter(request):
     """
     Open browser
     """

@@ -1,5 +1,5 @@
 """
-Page enter test
+Github redirecting test
 """
 
 import pytest
@@ -12,7 +12,7 @@ from src.pages.subscriptions import SubscriptionsPage
 @pytest.mark.redirecding
 def test_redirecting(enter):
     """
-    Try to enter the page
+    Redirect to github
     """
 
     with SubscriptionsPage() as page:

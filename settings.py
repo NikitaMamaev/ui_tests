@@ -14,6 +14,8 @@ UI_HANDLER = "/ui"
 
 GITHUB_URL = "https://github.com/zeburek/flask-mongoengine-example"
 
+LIST_LENGTH = 5
+
 #
 # Selenium settings
 #

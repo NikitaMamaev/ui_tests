@@ -12,7 +12,7 @@ from tests.data.subscription import positive
 @pytest.mark.positive
 def test_deleting(enter):
     """
-    Try to enter the page
+    Clear the table
     """
 
     with SubscriptionsPage() as page:

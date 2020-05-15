@@ -1,31 +1,16 @@
 """
-Delete subscriptions before testing
+Delete subscriptions after testing
 """
 
 import pytest
 
-from utils.api_requests import send_request
+from src.pages.subscriptions import SubscriptionsPage
 
 
-def delete_subscriptions() -> dict:
-    """
-    Delete all subscriptions
-    """
-
-    response = send_request(
-        method='delete'
-    )
-
-    return response
-
-
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def clean(request):
     """
-    Delete subscriptions if the list is not empty
+    Delete subscriptions after testing
     """
 
-    if send_request():
-        delete_subscriptions()
-
-    request.addfinalizer(delete_subscriptions)
+    request.addfinalizer(SubscriptionsPage().clear_button.click)

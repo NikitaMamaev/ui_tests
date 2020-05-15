@@ -22,7 +22,7 @@ class Field(Element):
 
     def input(self, value):
         """
-        Set text if field
+        Input text into field
         """
 
         return self.clear().send_keys(value)
