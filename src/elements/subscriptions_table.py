@@ -25,7 +25,6 @@ class SubscriptionsTable:
 
     @property
     def _rows(self):
-        print(self.table_row.driver.page_source)
         return self.table_row.find_all()
 
     @property

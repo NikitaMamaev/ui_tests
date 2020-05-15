@@ -29,7 +29,6 @@ class Wait:
         end_time = time.time() + self.timeout
 
         while time.time() < end_time:
-            print(data)
             if matcher.matches(data):
                 return
 
