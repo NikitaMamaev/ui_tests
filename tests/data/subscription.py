@@ -66,11 +66,6 @@ small_time = Subscription(
     time="2h"
 )
 
-xss_name = Subscription(
-    email="xss_name@example.com",
-    name="<script>alert('xss');</script>"
-)
-
 zero_time = Subscription(
     email="zero_time@example.com",
     name="Zero Time",
