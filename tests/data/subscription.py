@@ -32,6 +32,12 @@ empty_time = Subscription(
     time=""
 )
 
+expiring_time = Subscription(
+    email="expiring_time@example.com",
+    name="Expiring Time",
+    time="10s"
+)
+
 negative_email = Subscription(
     email="incorrect_email",
     name="Incorrect Email"
@@ -52,6 +58,11 @@ negative_time = Subscription(
 positive = Subscription(
     email="positive@example.com",
     name="Positive Name"
+)
+
+xss_name = Subscription(
+    email="xss_name@example.com",
+    name="<script>alert('xss');</script>"
 )
 
 zero_time = Subscription(

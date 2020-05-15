@@ -20,13 +20,6 @@ class Element:
         self.driver = Driver()
         self.locator = locator
 
-    def get_attribute(self, attr, parent=None):
-        """
-        Get value of element's attribute
-        """
-
-        return self.find(parent=parent).get_attribute(attr)
-
     def get_text(self, parent: WebElement = None):
         """
         Get text from element
