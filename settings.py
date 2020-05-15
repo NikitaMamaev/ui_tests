@@ -12,7 +12,7 @@ URL = f"http://{LOCAL_IP}:4000"
 API_HANDLER = "/subscriptions"
 UI_HANDLER = "/ui"
 
-DEBUG_MODE = environ.get("DEBUG", False)
+GITHUB_URL = "https://github.com/zeburek/flask-mongoengine-example"
 
 #
 # Selenium settings
@@ -30,4 +30,10 @@ WINDOW_HEIGHT = 768
 #
 # Timeouts
 #
-PAGE_LOAD_TIMEOUT = 5
+DEFAULT_TIMEOUT = 10
+PAGE_LOAD_TIMEOUT = 10
+ELEMENT_CLICKABLE_TIMEOUT = 3
+ELEMENT_APEARED_TIMEOUT = 3
+ELEMENT_DISSAPEARED_TIMEOUT = 3
+TABLE_CLEARING_TIMEOUT = 5
+SUBSCRIPTION_APEARED_TIMEOUT = 5

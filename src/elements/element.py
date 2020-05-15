@@ -5,6 +5,7 @@ Base class for page elements
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 
+import settings
 from src.misc.driver import Driver
 from src.misc.query import Locator
 from src.misc.expected_conditions import element_is_appeared, element_is_disappeared
@@ -12,7 +13,7 @@ from src.misc.expected_conditions import element_is_appeared, element_is_disappe
 
 class Element:
     """
-    Base page element which has locator and can be found
+    Class for base page element which has locator and can be found
     """
 
     def __init__(self, locator: Locator):
@@ -46,7 +47,7 @@ class Element:
 
         return self.driver.find_elements(*self.locator)
 
-    def find(self, parent: WebElement = None, timeout=15):
+    def find(self, parent: WebElement = None, timeout=settings.ELEMENT_APEARED_TIMEOUT):
         """
         Search for the first element by locator
         """
@@ -58,7 +59,7 @@ class Element:
 
         return None
 
-    def wait(self, parent: WebElement = None, timeout=30):
+    def wait(self, parent: WebElement = None, timeout=settings.ELEMENT_APEARED_TIMEOUT):
         """
         Wait for the element to appear
         """
@@ -67,7 +68,7 @@ class Element:
 
         return self
 
-    def wait_is_disappeared(self, timeout=30):
+    def wait_is_disappeared(self, timeout=settings.ELEMENT_DISSAPEARED_TIMEOUT):
         """
         Wait for the element to disappear
         """

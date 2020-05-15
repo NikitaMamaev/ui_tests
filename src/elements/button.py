@@ -4,6 +4,7 @@ Button element class description
 
 from selenium.webdriver.support.wait import WebDriverWait
 
+import settings
 from src.elements.element import Element
 from src.misc.expected_conditions import element_is_clickable
 
@@ -25,7 +26,7 @@ class Button(Element):
 
         return self
 
-    def wait_is_clickable(self, timeout=30):
+    def wait_is_clickable(self, timeout=settings.ELEMENT_CLICKABLE_TIMEOUT):
         """
         Wait until the button is clickable
         """

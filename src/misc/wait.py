@@ -6,13 +6,15 @@ import time
 
 import hamcrest as hc
 
+import settings
+
 
 class Wait:
     """
     Base class for waiters
     """
 
-    def __init__(self, timeout=30, frequency=0.5):
+    def __init__(self, timeout=settings.DEFAULT_TIMEOUT, frequency=0.5):
         self.timeout = timeout
         self.frequency = frequency
 
@@ -27,6 +29,7 @@ class Wait:
         end_time = time.time() + self.timeout
 
         while time.time() < end_time:
+            print(data)
             if matcher.matches(data):
                 return
 

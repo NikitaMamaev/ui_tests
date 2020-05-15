@@ -2,7 +2,6 @@
 
 import pytest
 
-import settings
 from src.misc.driver import Driver
 from src.pages.subscriptions import SubscriptionsPage
 
@@ -24,5 +23,4 @@ def enter(request, clean):
     with SubscriptionsPage() as page:
         page.open()
 
-    if not settings.DEBUG_MODE:
-        request.addfinalizer(escape)
+    request.addfinalizer(escape)
